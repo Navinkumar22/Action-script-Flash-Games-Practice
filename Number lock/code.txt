@@ -1,0 +1,58 @@
+stop();
+b1.addEventListener(MouseEvent.CLICK,fp1);
+b2.addEventListener(MouseEvent.CLICK,fp2);
+b3.addEventListener(MouseEvent.CLICK,fp3);
+b4.addEventListener(MouseEvent.CLICK,fp4);
+open.addEventListener(MouseEvent.CLICK,check);
+var num:int=0;
+
+function fp1(e){
+	num=Number(t1.text);
+	if(num<9){
+		num+=1;
+	}else{
+		num=0;
+	}
+	t1.text=String(num);
+	
+}
+function fp2(e){
+	num=Number(t2.text);
+	if(num<9){
+		num+=1;
+	}else{
+		num=0;
+	}
+	t2.text=String(num);
+	
+}
+function fp3(e){
+	num=Number(t3.text);
+	if(num<9){
+		num+=1;
+	}else{
+		num=0;
+	}
+	t3.text=String(num);
+	
+}
+function fp4(e){
+	num=Number(t4.text);
+	if(num<9){
+		num+=1;
+	}else{
+		num=0;
+	}
+	t4.text=String(num);
+
+}
+
+function check(e){
+	if(t1.text=="1" && t2.text=="2" && t3.text=="3" && t4.text=="4"){
+		gotoAndStop(2);
+		result.text="Successfully unlocked"
+	}else{
+		gotoAndStop(2);
+		result.text="Failed to unlock"
+	}
+}
