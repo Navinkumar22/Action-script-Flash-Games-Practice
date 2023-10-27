@@ -1,0 +1,136 @@
+stop();
+g1.addEventListener(MouseEvent.CLICK,swapg1);
+con.visible=false;
+var count:int=0;
+var c:int=0;
+
+function swapg1(e){
+	b1.addEventListener(MouseEvent.CLICK,swapg1b1);
+	b2.addEventListener(MouseEvent.CLICK,swapg1b2);
+	b3.addEventListener(MouseEvent.CLICK,swapg1b3);
+	b4.addEventListener(MouseEvent.CLICK,swapg1b4);
+	b5.addEventListener(MouseEvent.CLICK,swapg1b5);
+	b6.addEventListener(MouseEvent.CLICK,swapg1b6);
+	b7.addEventListener(MouseEvent.CLICK,swapg1b7);
+	b8.addEventListener(MouseEvent.CLICK,swapg1b8);
+	b9.addEventListener(MouseEvent.CLICK,swapg1b9);
+}
+
+
+function swapg1b1(e){
+	if(c>3){
+		gotoAndStop(2);
+	}
+	var n1:int=g1.x;
+	var n2:int=g1.y;
+	g1.x=b1.x;
+	g1.y=b1.y;
+	b1.x=n1;
+	b1.y=n2;
+	c++;
+	
+}
+
+function swapg1b2(e){
+	if(c>3){
+		gotoAndStop(2);
+	}
+	var n1:int=g1.x;
+	var n2:int=g1.y;
+	g1.x=b2.x;
+	g1.y=b2.y
+	b2.x=n1;
+	b2.y=n2;
+	c++;
+}
+
+function swapg1b3(e){
+	if(c>3){
+		gotoAndStop(2);
+	}
+	var n1:int=g1.x;
+	var n2:int=g1.y;
+	g1.x=b3.x;
+	g1.y=b3.y;
+	b3.x=n1;
+	b3.y=n2;
+	c++;
+	
+}
+function swapg1b4(e){
+	if(c>3){
+		gotoAndStop(2);
+	}
+	var n1:int=g1.x;
+	var n2:int=g1.y;
+	g1.x=b4.x;
+	g1.y=b4.y;
+	b4.x=n1;
+	b4.y=n2;
+	c++;
+	
+}
+function swapg1b5(e){
+	if(c>3){
+		gotoAndStop(2);
+	}
+	var n1:int=g1.x;
+	var n2:int=g1.y;
+	g1.x=b5.x;
+	g1.y=b5.y;
+	b5.x=n1;
+	b5.y=n2;
+	c++;
+	
+}
+function swapg1b6(e){
+	if(c>3){
+		gotoAndStop(2);
+	}
+	var n1:int=g1.x;
+	var n2:int=g1.y;
+	g1.x=b6.x;
+	g1.y=b6.y;
+	b6.x=n1;
+	b6.y=n2;
+	c++;
+	
+}
+function swapg1b7(e){
+	if(c>3){
+		gotoAndStop(2);
+	}
+	var n1:int=g1.x;
+	var n2:int=g1.y;
+	g1.x=b7.x;
+	g1.y=b7.y;
+	b7.x=n1;
+	b7.y=n2;
+	con.visible=true;
+	c++;
+}
+function swapg1b8(e){
+	if(c>3){
+		gotoAndStop(2);
+	}
+	var n1:int=g1.x;
+	var n2:int=g1.y;
+	g1.x=b8.x;
+	g1.y=b8.y;
+	b8.x=n1;
+	b8.y=n2;
+	c++;
+	
+}
+function swapg1b9(e){
+	if(c>3){
+		gotoAndStop(2);
+	}
+	var n1:int=g1.x;
+	var n2:int=g1.y;
+	g1.x=b9.x;
+	g1.y=b9.y;
+	b9.x=n1;
+	b9.y=n2;
+	c++;
+}
