@@ -1,0 +1,19 @@
+import flash.utils.Timer;
+import flash.events.TimerEvent;
+
+var n:Date=new Date();
+var t:Timer=new Timer(1000);
+
+t.addEventListener(TimerEvent.TIMER,rotate);
+t.start();
+
+function rotate(event:TimerEvent):void{
+	n=new Date();
+	var s:uint=n.getSeconds();
+	var m:uint=n.getMinutes();
+	var h:uint=n.getHours();
+	if(h<12){h=h-12};
+	sh.rotation=(s*6);
+	mh.rotation=(m*6);
+	hh.rotation=(h*30)+(m*1/2);
+}
