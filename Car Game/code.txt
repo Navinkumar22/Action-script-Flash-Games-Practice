@@ -1,0 +1,47 @@
+stop();
+
+
+var gameStarted:Boolean = false;
+
+start.visible = true;
+
+start.addEventListener(MouseEvent.CLICK, startGame);
+
+function startGame(e) {
+    start.visible = false;
+    gameStarted = true;
+    go.text = "";
+    addEventListener(Event.ENTER_FRAME, moveCar);
+}
+function moveCar(e)
+{
+    if (gameStarted) {
+        
+        var targetX:Number = mouseX;
+        var targetY:Number = mouseY;
+        
+        car.x += (targetX - car.x)/5;
+        car.y += (targetY - car.y)/5;
+        
+        
+        if (d1.hitTestObject(car)) {
+            gameOver(e);
+        }else if (d2.hitTestObject(car)) {
+            gameOver(e);
+        }else if (d3.hitTestObject(car)) {
+            gameOver(e);
+        }else if (d4.hitTestObject(car)) {
+            gameOver(e);
+        }else if (d5.hitTestObject(car)) {
+            gameOver(e);
+        }
+		}
+}
+function gameOver(e) {
+    gameStarted = false;
+    go.text = "GAME OVER";
+    start.visible = true;
+    removeEventListener(Event.ENTER_FRAME, moveCar);
+}
+
+
