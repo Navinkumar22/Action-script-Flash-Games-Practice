@@ -1,0 +1,136 @@
+stop();
+import flash.events.MouseEvent;
+
+
+
+var gametime:int=0;
+var defaultmove:Boolean =false;
+var speed:int=5;
+var moveup:Boolean=false;
+var movedown:Boolean=false;
+var moveright:Boolean=false;
+var moveleft:Boolean=false;
+
+var snakearray:Array=new Array();
+var foodarray:Array=new Array();
+
+var Snake=new snake();
+	addChild(Snake);
+	Snake.x=stage.stageWidth/2;
+	Snake.y=stage.stageHeight/2;
+	snakearray.push(Snake);
+	
+var Food=new food();
+	addChild(Food);
+	Food.x=Food.width+Math.random()*stage.stageWidth+-Food.width;
+	Food.y=Food.width+Math.random()*stage.stageHeight+-Food.width;
+	foodarray.push(Food);
+	
+addEventListener(Event.ENTER_FRAME,update);
+
+function update(e:Event)
+{
+	makesnake();
+	hitsnake();
+	snakemove();
+}
+
+function makesnake(){
+	for(var i:int=snakearray.length-1;i>0;i--){
+		var csnake=snakearray[i];
+		var addsnake=snakearray[i-1];
+		csnake.x=addsnake.x;
+		csnake.y=addsnake.y;
+	}
+	
+}
+
+function hitsnake(){
+	for(var i:int=0;i<snakearray.length;i++){
+		var csnake=snakearray[i];
+		for(var j:int=0;j<foodarray.length;j++){
+			var cfood=foodarray[j];
+			if(csnake.hitTestObject(cfood)){
+				foodarray.splice(j,1);
+				removeChild(cfood);
+				
+				var Food=new food();
+				addChild(Food);
+				Food.x=Food.width+Math.random()*stage.stageWidth+-Food.width;
+				Food.y=Food.width+Math.random()*stage.stageHeight+-Food.width;
+				foodarray.push(Food);
+				
+				var Snake=new snake();
+				addChild(Snake);
+				Snake.x=csnake.x;
+				Snake.y=csnake.y;
+				snakearray.push(Snake);
+			}
+		}
+	}
+}
+
+function snakemove(){
+	gametime++;
+	if(gametime==25){
+		defaultmove=true;
+		stage.addEventListener(KeyboardEvent.KEY_DOWN,keydownhandler);
+	}
+	if(defaultmove){
+		Snake.x+=speed;
+	}
+	if(moveup){
+		Snake.y-=speed;
+	}
+	if(movedown){
+		Snake.y+=speed;
+	}
+	if(moveright){
+		Snake.x+=speed;
+	}
+	if(moveleft){
+		Snake.x-=speed;
+	}
+}
+
+function keydownhandler(e:KeyboardEvent){
+	
+	switch(e.keyCode){
+		case Keyboard.UP:
+			if(!movedown){
+				moveup=true;
+				moveleft=false;
+				moveright=false;
+			}
+			defaultmove=false;
+			break;
+			
+		case Keyboard.DOWN:
+			if(!moveup){
+				movedown=true;
+				moveleft=false;
+				moveright=false;
+			}
+			defaultmove=false;
+			break;
+			
+		case Keyboard.RIGHT:
+			if(!moveleft){
+				moveright=true;
+				moveup=false;
+				movedown=false;
+			}
+			defaultmove=false;
+			break;
+		case Keyboard.LEFT:
+			if(!moveright){
+				moveleft=true;
+				moveup=false;
+				movedown=false;
+			}
+			defaultmove=false;
+			break;
+		default:
+			break;
+	}
+}
