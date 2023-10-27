@@ -1,0 +1,62 @@
+stop();
+import flash.events.MouseEvent;
+
+var num1;
+var num2;
+
+function getinput(){
+	num1=Number (inp1.text);
+	num2=Number (inp2.text);
+}
+
+function add(Event:MouseEvent):void{
+	getinput();
+	gotoAndStop(2);
+	outtext.text=String(num1+num2);
+	bk_btn.addEventListener(MouseEvent.CLICK,gettoframe1);
+	
+
+}
+
+function sub(Event:MouseEvent):void{
+	getinput();
+	gotoAndStop(2);
+	outtext.text=String(num1-num2);
+	bk_btn.addEventListener(MouseEvent.CLICK,gettoframe1);
+	
+
+}
+
+function div(Event:MouseEvent):void{
+	getinput();
+	gotoAndStop(2);
+	outtext.text=String(num1/num2);
+	bk_btn.addEventListener(MouseEvent.CLICK,gettoframe1);
+	
+
+}
+
+function mul(Event:MouseEvent):void{
+	getinput();
+	gotoAndStop(2);
+	outtext.text=String(num1*num2);
+	bk_btn.addEventListener(MouseEvent.CLICK,gettoframe1);
+	
+
+}
+
+function mod(Event:MouseEvent):void{
+	getinput();
+	gotoAndStop(2);
+	outtext.text=String(num1%num2);
+	bk_btn.addEventListener(MouseEvent.CLICK,gettoframe1);
+
+}
+function gettoframe1(Event:MouseEvent):void{
+	gotoAndStop(1);
+}
+add_btn.addEventListener(MouseEvent.CLICK,add);
+sub_btn.addEventListener(MouseEvent.CLICK,sub);
+mul_btn.addEventListener(MouseEvent.CLICK,mul);
+div_btn.addEventListener(MouseEvent.CLICK,div);
+mod_btn.addEventListener(MouseEvent.CLICK,mod);
