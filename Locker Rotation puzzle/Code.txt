@@ -1,0 +1,54 @@
+import flash.events.MouseEvent;
+
+stop()
+btn.addEventListener(MouseEvent.CLICK,lock)
+function lock(Event:MouseEvent):void{
+	gotoAndStop(2)
+	r1.addEventListener(MouseEvent.CLICK,rotate1)
+	r2.addEventListener(MouseEvent.CLICK,rotate2)
+	r3.addEventListener(MouseEvent.CLICK,rotate3)
+	r4.addEventListener(MouseEvent.CLICK,rotate4)
+	e.addEventListener(MouseEvent.CLICK,enter)
+	
+	function rotate1(e){
+		r1.rotation+=45
+		
+	}
+
+	function rotate2(e){
+		r2.rotation+=45
+		
+	}
+
+	function rotate3(e){
+		r3.rotation+=45
+		
+	}
+
+	function rotate4(e){
+		r4.rotation+=45
+		
+	}
+	function enter(e){
+			
+		if(r1.rotation==135 && r2.rotation==90 && r3.rotation==180 && r4.rotation==45){
+			gotoAndStop(3)
+			
+		}else{
+			gotoAndStop(4)
+			t1.addEventListener(MouseEvent.CLICK,lock)
+			
+		}
+	}
+	
+}
+/*
+45
+90
+135
+180
+-135
+-90
+-45
+0
+*/
