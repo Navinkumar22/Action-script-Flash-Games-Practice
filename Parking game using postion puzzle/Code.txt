@@ -1,0 +1,93 @@
+var car:car1=new car1()
+addChild(car)
+car.x=car.width
+car.y=car.height
+rr.addEventListener(MouseEvent.CLICK,rotateright)
+rl.addEventListener(MouseEvent.CLICK,rotateleft)
+front.addEventListener(MouseEvent.CLICK,mf)
+back.addEventListener(MouseEvent.CLICK,mb)
+function rotateright(e){
+	car.rotation-=10
+}
+
+function rotateleft(e){
+	car.rotation+=10
+}
+function mf(e){
+	
+	if(car.rotation<0 && car.rotation>-90){
+		car.x-=car.rotation
+		car.y-=car.rotation
+		trace(true)
+	}else if(car.rotation>0 && car.rotation<90){
+		car.x-=car.rotation
+		car.y+=car.rotation
+		
+	}else if(car.rotation==-90){
+		car.x-=car.rotation
+	}else if(car.rotation==90){
+		car.x-=car.rotation
+	}else if(car.rotation>-180 && car.rotation<-90){
+		car.x-=car.rotation
+		car.y+=car.rotation
+	}else if(car.rotation<180 && car.rotation>90){
+		car.x-=car.rotation
+		car.y-=car.rotation
+	}else if(car.rotation==0){
+		car.y+=10
+	}else if(car.rotation==180){
+		car.y-=10
+	}else if(car.rotation==-180){
+		car.y-=10
+	}
+	if(rc1.hitTestObject(car)){
+		res.text="GAME OVER"
+	}	if(rc1.hitTestObject(car)){
+		res.text="GAME OVER"
+	}	if(rc2.hitTestObject(car)){
+		res.text="GAME OVER"
+	}	if(wh1.hitTestObject(car)){
+		res.text="GAME OVER"
+	}	if(wh2.hitTestObject(car)){
+		res.text="GAME OVER"
+	}
+}
+
+function mb(e){
+	
+	if(car.rotation<0 && car.rotation>-90){
+		car.x+=car.rotation
+		car.y+=car.rotation
+	}else if(car.rotation>0 && car.rotation<90){
+		car.x+=car.rotation
+		car.y-=car.rotation
+		
+	}else if(car.rotation==-90){
+		car.x+=car.rotation
+	}else if(car.rotation==90){
+		car.x+=car.rotation
+	}else if(car.rotation>-180 && car.rotation<-90){
+		car.x+=car.rotation
+		car.y-=car.rotation
+	}else if(car.rotation<180 && car.rotation>90){
+		car.x+=car.rotation
+		car.y+=car.rotation
+	}else if(car.rotation==0){
+		car.y-=10
+	}else if(car.rotation==-180){
+		car.y+=10
+	}else if(car.rotation==180){
+		car.y+=10
+	}
+	if(rc1.hitTestObject(car)){
+		res.text="GAME OVER"
+	}if(rc1.hitTestObject(car)){
+		res.text="GAME OVER"
+	}if(rc2.hitTestObject(car)){
+		res.text="GAME OVER"
+	}if(wh1.hitTestObject(car)){
+		res.text="GAME OVER"
+	}if(wh2.hitTestObject(car)){
+		res.text="GAME OVER"
+	}
+}
