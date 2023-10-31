@@ -1,0 +1,38 @@
+zoro.addEventListener(MouseEvent.MOUSE_DOWN,sd)
+zoro.addEventListener(MouseEvent.MOUSE_UP,ed)
+function sd(e){
+	zoro.startDrag()
+	
+}
+function ed(e){
+	zoro.stopDrag()
+	if(zoro.hitTestObject(b1)){
+		res.text="BONK"
+	}
+	if(zoro.hitTestObject(b2)){
+		res.text="BONK"
+	}
+	if(zoro.hitTestObject(b3)){
+		res.text="BONK"
+	}
+	if(zoro.hitTestObject(b4)){
+		res.text="BONK"
+	}
+	if(zoro.hitTestObject(b5)){
+		res.text="BONK"
+	}
+	if(zoro.hitTestObject(b6)){
+		res.text="BONK"
+	}
+	if(zoro.hitTestObject(b7)){
+		res.text="BONK"
+	}
+	if(zoro.hitTestObject(b8)){
+		res.text="BONK"
+	}if(zoro.hitTestObject(b9)){
+		res.text="BONK"
+	}
+	if(zoro.hitTestObject(strawhat)){
+		res.text="Found Crew"
+	}
+}
