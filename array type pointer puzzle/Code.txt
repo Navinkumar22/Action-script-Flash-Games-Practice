@@ -1,0 +1,43 @@
+stop()
+
+var i:int=0;
+var sc:int=0;
+var qns:Array=[ "plepa", "aabann", "wiki", "water", "football", 
+                "ncaoe", "mage", "frae", "tfors", "rcoodciel"]
+var ans:Array=["apple", "banana", "kiwi", "water", "football", 
+				"ocean", "game", "fear", "frost", "crocodile"]
+
+start.addEventListener(MouseEvent.CLICK,st)
+
+function st(e){	
+	gotoAndStop(2)
+
+	if(i<10){
+		qn.text=qns[i]
+	}else{
+		res.text=String(sc)+" Out of 10"
+	}
+	next.addEventListener(MouseEvent.CLICK,nn)
+	
+	
+}
+
+function nn(e){
+
+	
+
+	if(i<10 && an.text!=null && an.text==ans[i]){
+		sc++
+		i++
+		an.text="";
+		trace(an.text,ans[i])
+		addEventListener(Event.ENTER_FRAME,st)
+	}
+	else if(i<10 && an.text!=null && an.text!=ans[i]){
+		i++
+		an.text="";
+		trace(an.text,ans[i])
+		addEventListener(Event.ENTER_FRAME,st)
+	}
+
+}
